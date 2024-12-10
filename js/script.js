@@ -21,26 +21,32 @@ const userAge = document.getElementById('userAge')
 
 //card
 const nameOutElm = document.getElementById('nameOut')
-const priceOut = document.getElementById('priceOut')
+const priceOutElm = document.getElementById('priceOut')
 const cpUserElm = document.getElementById('cpUser')
 const carrUserElm = document.getElementById('carrUser')
-
-
-//VALUES CONTAINERS
-
-
-
 
 //DOM EVENTS
 formElm.addEventListener("submit", function(event){
     event.preventDefault()
 
+    //controllo nel log
     console.log(userNameElm.value, tripLenElm.value, userAge.value)
+
+    //RESTITUZIONE DATI DEL PASSEGGERO 
+     //Nominativo Passeggero
+    nameOutElm.value = userNameElm.value
+    nameOutElm.innerHTML = nameOutElm.value
+     //CP passeggero
+    const userCP = Math.floor(Math.random() * 9999 - 9000) + 9001
+    cpUserElm.value = userCP
+    cpUserElm.innerHTML = cpUserElm.value
+     //Carrozza passeggero
+     const userCarr = Math.floor(Math.random() * 13) + 1
+     carrUserElm.value = userCarr
+     carrUserElm.innerHTML = carrUserElm.value
     
     const price = tripLenElm.value * 0.21 
     console.log(`il prezzo non scontato è: ${price.toFixed(2)}€` )
-    priceOut.value = price.toFixed(2)
-    priceOut.innerHTML = priceOut.value
 
      //DICHIARAZIONE VARIABILI PER SCONTO E PREZZO SCONTATO
      const discountYng = price * 0.2
@@ -54,6 +60,10 @@ formElm.addEventListener("submit", function(event){
          console.log("lo sconto da applicare è di: ",discountYng.toFixed(2),"€" )
          discountPrice = price - discountYng
          console.log("il prezzo scontato è: ",discountPrice.toFixed(2),"€" )
+
+         //RESTITUZIONE PREZZO SCONTATO NELL'ELEMENTO "PREZZO" DELL'HTML
+         priceOutElm.value = discountPrice.toFixed(2)
+         priceOutElm.innerHTML = (`${priceOutElm.value}€ con uno sconto di ${discountYng.toFixed(2)}€ per tariffa Young`)
  
      } 
      //CONTROLLO SE IL PASSEGGERO FACCIA PARTE DELLA CATEGORIA OVER 
@@ -63,12 +73,21 @@ formElm.addEventListener("submit", function(event){
          console.log("lo sconto da applicare è di: ",discountSnr.toFixed(2),"€" )
          discountPrice = price - discountSnr
          console.log("il prezzo scontato è: ",discountPrice.toFixed(2),"€" )
+
+         //RESTITUZIONE PREZZO SCONTATO NELL'ELEMENTO "PREZZO" DELL'HTML 
+         priceOutElm.value = discountPrice.toFixed(2)
+         priceOutElm.innerHTML = (`${priceOutElm.value}€ con uno sconto di ${discountYng.toFixed(2)}€ per tariffa Over 65`)
  
      }
      else{
          //COMUNICO AL PASSEGGERO IL PREZZO BASE DEL BIGLIETTO
          console.log("nessuno sconto qui!")
+         
+         //RESTITUZIONE PREZZO NON SCONTATO NELL'ELEMENTO "PREZZO" DELL' HTML
+        priceOutElm.value = price.toFixed(2)
+        priceOutElm.innerHTML = (`${priceOutElm.value}€ Biglietto Standard`)
      }
+
 
 })
 
