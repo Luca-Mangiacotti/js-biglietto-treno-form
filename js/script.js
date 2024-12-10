@@ -19,6 +19,13 @@ const userNameElm = document.getElementById('userName')
 const tripLenElm = document.getElementById('tripLen')
 const userAge = document.getElementById('userAge')
 
+//card
+const nameOutElm = document.getElementById('nameOut')
+const priceOut = document.getElementById('priceOut')
+const cpUserElm = document.getElementById('cpUser')
+const carrUserElm = document.getElementById('carrUser')
+
+
 //VALUES CONTAINERS
 
 
@@ -32,6 +39,8 @@ formElm.addEventListener("submit", function(event){
     
     const price = tripLenElm.value * 0.21 
     console.log(`il prezzo non scontato è: ${price.toFixed(2)}€` )
+    priceOut.value = price.toFixed(2)
+    priceOut.innerHTML = priceOut.value
 
      //DICHIARAZIONE VARIABILI PER SCONTO E PREZZO SCONTATO
      const discountYng = price * 0.2
