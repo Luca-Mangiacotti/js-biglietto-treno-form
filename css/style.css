@@ -12,5 +12,36 @@
     GENERAL SET
 ------------------*/
 body{
+    padding: 25px;
     background-color: #0384fc;
+    text-align: center;
 }
+
+/*----------------
+    TYPOGRAPHY
+------------------*/
+
+h1{
+    padding: 25px;
+}
+
+
+/*----------------
+    SECTION
+------------------*/
+
+#form,
+#ticketCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #ffff;
+}
+
+#ticketCard span{
+    color: #c8e0e8;
+}
+
+
+

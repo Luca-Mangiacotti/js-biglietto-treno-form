@@ -9,13 +9,14 @@
     <!-- /Inserimento foglio di stile -->
 </head>
 <body>
+    <h1>Calcolo del biglietto del treno</h1>
     <!-- Inserimento sezione contenente FORM e Card per l'output del biglietto  -->
-    <section>
+    <section id ="ticketArea">
         <!-- Inserimento Form -->
         <form id="form" action="">
             <label for="userName">Il tuo nominativo (nome e cognome)</label><br>
             <input type="text" id="userName" name="userName" value="" required><br>
-            <label for="tripLen">Inserisci i Km che vuoi percorrere</label><br>
+            <label for="tripLen">Inserisci Km da percorrere</label><br>
             <input type="number" id="tripLen" name="tripLen" value="" required><br><br>
             <label for="userAge">Età Passeggero</label>
             <select id="userAge" name="userAge">
@@ -23,13 +24,13 @@
                 <option value="Adulto">Adulto</option>
                 <option value="Over 65">Over 65</option>
             </select><br>
-            <input type="submit" value="Invia">
-            <input type="reset" value="Annulla">
+            <button id="submit" type="submit">Invia</button>
+            <button id="reset" type="reset">Annulla</button>
         </form>
         <!-- /Inserimento Form -->
 
         <!-- Inserimento Ticket Card -->
-        <div class="ticketCard">
+        <div id="ticketCard">
             <div>Nominativo: <span id="nameOut" value="">-</span></div>
             <div>Prezzo: <span id="priceOut" value="">-</span></div>
             <div>CP: <span id="cpUser" value="">-</span></div>

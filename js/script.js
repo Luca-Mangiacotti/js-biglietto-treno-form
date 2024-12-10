@@ -20,6 +20,7 @@ const tripLenElm = document.getElementById('tripLen')
 const userAge = document.getElementById('userAge')
 
 //card
+const cardElm = document.getElementById('ticketCard')
 const nameOutElm = document.getElementById('nameOut')
 const priceOutElm = document.getElementById('priceOut')
 const cpUserElm = document.getElementById('cpUser')
@@ -87,7 +88,6 @@ formElm.addEventListener("submit", function(event){
         priceOutElm.value = price.toFixed(2)
         priceOutElm.innerHTML = (`${priceOutElm.value}€ Biglietto Standard`)
      }
-
 
 })
 
