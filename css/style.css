@@ -17,14 +17,24 @@ body{
     text-align: center;
 }
 
+.btn{
+    padding: 5px;
+    background-color: #e6e3e3;
+    border-radius: 10px;
+}
+
 /*----------------
     TYPOGRAPHY
 ------------------*/
 
 h1{
     padding: 25px;
+    color: #e6e3e3;
 }
 
+#form{
+    color: #e6e3e3;
+}
 
 /*----------------
     SECTION
@@ -33,15 +43,36 @@ h1{
 #form,
 #ticketCard{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #ffff;
+    height: 50px;
+}
+
+#form{
+    justify-content: center;
+}
+
+#ticketCard{
+    margin-top: 50px;
+    background-color: #0876dd ;
+    color: black;
+    justify-content: space-between;
 }
 
 #ticketCard span{
-    color: #c8e0e8;
+    color: #e6e3e3;
+    font-family: italic;
 }
 
 
+#nameField{
+    background-color: #0a5aa5;
+    height: 100%;
+    align-content: center;
+    padding-right: 5px;
+}
+#nameField span{
+    text-transform: uppercase;
+    font-weight: 900;
+}
 
