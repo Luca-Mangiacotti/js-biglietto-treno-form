@@ -19,11 +19,48 @@ const userNameElm = document.getElementById('userName')
 const tripLenElm = document.getElementById('tripLen')
 const userAge = document.getElementById('userAge')
 
+//VALUES CONTAINERS
+
+
+
+
 //DOM EVENTS
 formElm.addEventListener("submit", function(event){
     event.preventDefault()
 
     console.log(userNameElm.value, tripLenElm.value, userAge.value)
+    
+    const price = tripLenElm.value * 0.21 
+    console.log(`il prezzo non scontato è: ${price.toFixed(2)}€` )
+
+     //DICHIARAZIONE VARIABILI PER SCONTO E PREZZO SCONTATO
+     const discountYng = price * 0.2
+     const discountSnr = price * 0.4
+     let discountPrice
+ 
+     //CONTROLLO SE IL PASSEGGERO ABBIA COMPIUTO LA MAGGIOR ETA'
+     if(userAge.value === "Minorenne"){
+ 
+         //CALCOLO DELLO SCONTO SU PASSEGGERO MINORENNE (-20%)
+         console.log("lo sconto da applicare è di: ",discountYng.toFixed(2),"€" )
+         discountPrice = price - discountYng
+         console.log("il prezzo scontato è: ",discountPrice.toFixed(2),"€" )
+ 
+     } 
+     //CONTROLLO SE IL PASSEGGERO FACCIA PARTE DELLA CATEGORIA OVER 
+     else if (userAge.value === "Over 65") {
+ 
+         //CALCOLO DELLO SCONTO SU PASSEGGERO OVER (-40%)
+         console.log("lo sconto da applicare è di: ",discountSnr.toFixed(2),"€" )
+         discountPrice = price - discountSnr
+         console.log("il prezzo scontato è: ",discountPrice.toFixed(2),"€" )
+ 
+     }
+     else{
+         //COMUNICO AL PASSEGGERO IL PREZZO BASE DEL BIGLIETTO
+         console.log("nessuno sconto qui!")
+     }
 
 })
+
 
